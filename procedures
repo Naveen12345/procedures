@@ -1,0 +1,135 @@
+1)
+CREATE OR REPLACE PROCEDURE wish
+AS 
+BEGIN 
+   dbms_output.put_line('hai naveen'); 
+END; 
+/
+
+Statement processed.
+
+2)BEGIN
+wish;
+END
+/
+hai naveen
+
+Statement processed.
+
+
+3)DROP PROCEDURE wish;
+ 
+Procedure dropped.
+
+
+4)DECLARE 
+   a number; 
+   b number; 
+   c number;
+PROCEDURE minimum(x IN number, y IN number, z OUT number) IS 
+BEGIN 
+   IF x < y THEN 
+      z:= x; 
+   ELSE 
+      z:= y; 
+   END IF; 
+END;   
+BEGIN 
+   a:= 1; 
+   b:= 2; 
+   minimum(a, b, c); 
+   dbms_output.put_line(' Minimum of (1, 2) : ' || c); 
+END; 
+/
+Minimum of (1, 2) : 1
+
+Statement processed.
+
+5)DECLARE 
+   a number; 
+PROCEDURE square(x IN OUT number) IS 
+BEGIN 
+  X := x * x; 
+END;  
+BEGIN 
+   a:= 5; 
+   square(a); 
+   dbms_output.put_line(' Square of (5): ' || a); 
+END; 
+/
+Square of (5): 25
+
+Statement processed.
+
+6)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE add( x IN number, y IN number, z OUT number) IS
+BEGIN
+   z:=x+y;
+END;
+BEGIN 
+   a:= 12; 
+   b:= 13; 
+   add(a, b, c); 
+   dbms_output.put_line(' Addition of (12,13) : ' || c); 
+END; 
+/
+
+Addition of (12, 13) : 25
+
+Statement processed.
+
+7)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE mul( x IN number, y IN number, z OUT number) IS
+BEGIN
+   z:=x*y;
+END;
+BEGIN 
+   a:= 10; 
+   b:= 10; 
+   mul(a, b, c); 
+   dbms_output.put_line(' multiplication of (10, 10) : ' || c); 
+END; 
+/
+multiplication of (10, 10) : 100
+
+Statement processed.
+
+
+8)DECLARE
+a number;
+b number;
+c number;
+PROCEDURE max( x IN number, y IN number, z OUT number) IS
+BEGIN
+  IF x > y THEN
+   z:=x;
+  ELSE
+   z:=y;
+   END IF;
+END;
+BEGIN 
+   a:= 5; 
+   b:= 10; 
+   max(a, b, c); 
+   dbms_output.put_line(' Maximum of (5, 10) : ' || c); 
+END; 
+/
+ Maximum of (5, 10) : 10
+
+Statement processed.
+
+
+
+
+
+
+
+
+
+.
